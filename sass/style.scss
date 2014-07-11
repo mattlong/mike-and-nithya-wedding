@@ -39,7 +39,7 @@ iframe {
     min-width: 100%;
     width: 100%;
     min-height: 100%;
-    background-image: url("/images/m-and-n-europe-bw.jpg");
+    background-image: url("/images/m-and-n-sidewalk-bw.jpg");
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -172,6 +172,10 @@ iframe {
         margin: 0 auto;
         width: 100%;
         background-color: white;
+
+        a {
+            color: blue;
+        }
     }
 
     iframe {
