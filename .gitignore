@@ -1,0 +1,7 @@
+*.swp
+.DS_Store
+.sass-cache
+build
+node_modules
+
+style/style.css

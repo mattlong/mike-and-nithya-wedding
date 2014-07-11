@@ -1,0 +1,194 @@
+$primary-color: white;
+$primary-font-family: 'Source Sans Pro', Tahoma, Arial, sans-serif;
+
+@mixin border-radius($val) {
+    border-radius: $val;
+    -webkit-border-radius: $val;
+    -moz-border-radius: $val;
+    -ms-border-radius: $val;
+}
+
+@mixin user-select($val) {
+    user-select: $val;
+    -webkit-user-select: $val;
+    -moz-user-select: $val;
+    -ms-user-select: $val;
+}
+
+body {
+    margin: 0;
+    color: $primary-color;
+}
+
+a {
+    color: $primary-color;
+
+    &:active,
+    &:visited {
+        color: $primary-color;
+    }
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+#outerWrapper {
+    position: absolute;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    background-image: url("/images/m-and-n-europe-bw.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+
+    #bgOverlay {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(0,0,0,.3);
+        z-index: -1;
+    }
+}
+
+.nav-item {
+    line-height: 1.25em;
+    letter-spacing: 0.2em;
+    font-family: $primary-font-family;
+    text-transform: uppercase;
+}
+
+#mobileNav {
+    display: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 1em 0 1em;
+    text-align: center;
+    background-color: #333538;
+    @include border-radius(0);
+    @include user-select(none);
+    font-size: 14px;
+
+    #mobileNavLabel {
+        cursor: pointer;
+
+        &:after {
+            @extend .nav-item;
+            content: 'Menu';
+        }
+    }
+
+    ul {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 2em 0 0;
+
+
+        li {
+            margin: 1.25em 0;
+            @extend .nav-item;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
+
+#mobileNav.menu-open {
+    ul {
+        display: block !important;
+    }
+
+    #mobileNavLabel {
+        &:after {
+            content: 'Close';
+        }
+    }
+}
+
+
+#mainNav {
+    top: 0;
+    left: auto;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    ul {
+        margin: 30px auto;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            padding: 0 12px;
+            margin: 0;
+            @extend .nav-item;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+#innerWrapper {
+    width: 60%;
+    margin: 0 auto;
+
+    #titleArea {
+        text-align: center;
+        letter-spacing: 2px;
+
+        h1 {
+            margin: 0;
+            font-size:108px;
+            font-family: Verdana, sans-serif;
+        }
+
+        p {
+            font-size:32px;
+            letter-spacing: 6px;
+            font-family: $primary-font-family;
+            color: #ffd675;
+        }
+    }
+
+    #content {
+        color: #444;
+        padding: 50px;
+        margin: 0 auto;
+        width: 100%;
+        background-color: white;
+    }
+
+    iframe {
+        width: 100%;
+        border-width: 0;
+        min-width: 360px;
+        height: 800px;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    #mainNav {
+        display: none;
+    }
+
+    #mobileNav {
+        display: block;
+    }
+}

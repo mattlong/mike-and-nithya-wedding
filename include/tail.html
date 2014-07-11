@@ -1,0 +1,17 @@
+    </div>
+    <script>
+      var mobileNavElem = document.getElementById('mobileNav');
+      var mobileNavShowing = false;
+
+      document.getElementById('mobileNavLabel').addEventListener('click', function(e) {
+        if (mobileNavShowing) {
+          mobileNavElem.classList.remove('menu-open');
+          mobileNavShowing = false;
+        } else {
+          mobileNavElem.classList.add('menu-open');
+          mobileNavShowing = true;
+        }
+      });
+    </script>
+  </body>
+</html>
