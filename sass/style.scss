@@ -176,6 +176,13 @@ iframe {
         a {
             color: blue;
         }
+
+        .section {
+            border-bottom: 2px solid #333;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
     }
 
     iframe {
